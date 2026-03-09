@@ -1,0 +1,165 @@
+/* Luxe Jewels — color shader & typography
+   New Rocker (Impallari Type) for headings, Cormorant Garamond for body */
+:root {
+  --font-heading: 'New Rocker', serif;
+  --font-body: 'Cormorant Garamond', Georgia, serif;
+  --bg-deep: #0a0908;
+  --bg-card: #121110;
+  --bg-elevated: #1a1918;
+  --gold: #c9a962;
+  --gold-light: #e5d4a1;
+  --gold-dark: #8b7355;
+  --rose: #b76e79;
+  --silver: #a8b2b8;
+  --text: #e8e6e3;
+  --text-muted: #9a9590;
+  --accent: #c9a962;
+  --gradient-gold: linear-gradient(135deg, #c9a962 0%, #8b7355 50%, #6b5344 100%);
+  --gradient-hero: linear-gradient(180deg, #0a0908 0%, #1a1510 40%, #0a0908 100%);
+  --shadow-glow: 0 0 40px rgba(201, 169, 98, 0.15);
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-deep);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Subtle noise overlay (adds texture to shader background) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+}
+
+/* Ensure app content sits above fixed overlays */
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  text-transform: uppercase;
+  text-shadow: 0 0 40px rgba(201, 169, 98, 0.1);
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--gold-light);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Shader-style overlay for hero sections */
+.hero-shader {
+  background: var(--gradient-hero);
+  position: relative;
+}
+
+.hero-shader::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201, 169, 98, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Star rating */
+.stars {
+  display: flex;
+  gap: 2px;
+  color: var(--gold);
+  font-size: 0.9rem;
+}
+
+.stars::before {
+  content: '★★★★★';
+  letter-spacing: 2px;
+}
+
+.stars[data-rating="5"] {
+  --fill: 100%;
+}
+
+.stars[data-rating="4.5"] {
+  --fill: 90%;
+}
+
+.stars[data-rating="4"] {
+  --fill: 80%;
+}
+
+.stars[data-rating="3.5"] {
+  --fill: 70%;
+}
+
+.stars[data-rating="3"] {
+  --fill: 60%;
+}
+
+.stars span {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

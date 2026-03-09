@@ -1,0 +1,59 @@
+.page-about {
+  padding-bottom: 4rem;
+}
+
+.about-hero {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding: 2rem 1.25rem;
+  }
+}
+
+.about-tagline {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.about-content,
+.about-values {
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+}
+
+.content-heading {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-content p,
+.about-values p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.values-list {
+  list-style: none;
+}
+
+.values-list li {
+  padding: 0.5rem 0;
+  color: var(--text-muted);
+  border-bottom: 1px solid rgba(201, 169, 98, 0.1);
+}
+
+.values-list li strong {
+  color: var(--gold);
+  margin-right: 0.5rem;
+}

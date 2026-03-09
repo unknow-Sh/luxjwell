@@ -1,0 +1,143 @@
+.page-checkout {
+  padding: 2rem 0 4rem;
+}
+
+.checkout-note {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.checkout-form-wrap {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border: 1px solid rgba(201, 169, 98, 0.1);
+}
+
+.form-section-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--gold);
+  margin: 1rem 0 0.75rem;
+}
+
+.form-section-title:first-child {
+  margin-top: 0;
+}
+
+.checkout-form label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.checkout-form input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  background: var(--bg-elevated);
+  border: 1px solid rgba(201, 169, 98, 0.2);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: inherit;
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+.checkout-order {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border: 1px solid rgba(201, 169, 98, 0.15);
+  position: sticky;
+  top: 100px;
+}
+
+.order-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.order-list {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.order-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.order-item-price {
+  color: var(--gold);
+}
+
+.order-total {
+  font-size: 1.2rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(201, 169, 98, 0.2);
+  margin-bottom: 1rem;
+}
+
+.order-total strong {
+  color: var(--gold);
+}
+
+.btn-place-order {
+  width: 100%;
+  padding: 0.9rem;
+  background: var(--gradient-gold);
+  color: var(--bg-deep);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  transition: box-shadow 0.2s;
+}
+
+.btn-place-order:hover {
+  box-shadow: 0 6px 20px rgba(201, 169, 98, 0.35);
+}
+
+.back-cart {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.back-cart:hover {
+  color: var(--gold);
+}
