@@ -1,0 +1,330 @@
+{
+    "nav": {
+        "home": "Home",
+        "shop": "Shop",
+        "about": "About",
+        "contact": "Contact",
+        "cart": "Cart"
+    },
+    "footer": {
+        "tagline": "Crafted for the extraordinary.",
+        "rights": "All rights reserved."
+    },
+    "categories": {
+        "rings": {
+            "name": "Rings",
+            "description": "Elegant rings for every occasion"
+        },
+        "necklaces": {
+            "name": "Necklaces",
+            "description": "Statement necklaces & pendants"
+        },
+        "earrings": {
+            "name": "Earrings",
+            "description": "Earrings that shine"
+        },
+        "bracelets": {
+            "name": "Bracelets",
+            "description": "Wrist elegance"
+        }
+    },
+    "home": {
+        "hero": {
+            "title": "Luxe Jewels",
+            "subtitle": "Crafted for the extraordinary",
+            "cta": "Explore Collection"
+        },
+        "marquee": {
+            "handFinished": "Hand‑finished",
+            "ethicallySourced": "Ethically sourced",
+            "limitedDrops": "Limited drops",
+            "newArrivals": "New arrivals weekly",
+            "giftReady": "Gift‑ready packaging",
+            "goldShader": "Signature gold shader"
+        },
+        "categories": {
+            "title": "Shop by Category"
+        },
+        "featured": {
+            "title": "Featured Pieces",
+            "viewAll": "View All Jewelry"
+        },
+        "promise": {
+            "title": "Buyer Promise"
+        },
+        "heritage": {
+            "eyebrow": "Our Legacy",
+            "title": "A Century of Brilliance",
+            "desc": "Since 1924, Luxe Jewels has been at the forefront of artisan jewelry. Each piece tells a story of heritage, precision, and the pursuit of perfection.",
+            "cta": "Discover Our Story"
+        },
+        "ethical": {
+            "title": "Responsibly Sourced",
+            "desc": "We believe luxury shouldn't cost the Earth. 100% of our gold is recycled, and every diamond is conflict-free.",
+            "badges": {
+                "fairTrade": "Fair Trade",
+                "conflictFree": "Conflict Free",
+                "recycledGold": "Recycled Gold"
+            }
+        },
+        "store": {
+            "title": "Visit Our Studio",
+            "desc": "Experience the collection in person. Our flagship boutique in Mayfair offers private styling consultations.",
+            "location": "Location",
+            "hours": "Hours",
+            "cta": "Book a Consultation"
+        },
+        "collectionsBanner": {
+            "title": "The Entire Collection",
+            "subtitle": "From minimal rings to heavy statement necklaces.",
+            "cta": "View All Collection"
+        },
+        "quote": "Whereas disregard and contempt for human rights have resulted in barbarous acts which have outraged the conscience of mankind.",
+        "newsletter": {
+            "title": "Get early access to drops.",
+            "desc": "New pieces, private offers, and styling notes — sent with restraint.",
+            "placeholder": "you@example.com",
+            "cta": "Notify me",
+            "email": "Email"
+        },
+        "craft": {
+            "title": "From Sketch to Shine",
+            "steps": {
+                "design": {
+                    "t": "Design",
+                    "d": "Bold silhouettes with fine detail."
+                },
+                "casting": {
+                    "t": "Casting",
+                    "d": "Precision metalwork for perfect balance."
+                },
+                "setting": {
+                    "t": "Setting",
+                    "d": "Secure stones and seamless alignment."
+                },
+                "polish": {
+                    "t": "Polish",
+                    "d": "Hand finish for a mirror glow."
+                }
+            }
+        },
+        "gift": {
+            "title": "The Gifting Guide",
+            "subtitle": "Find the perfect piece for someone special.",
+            "cta": "Shop Collection",
+            "categories": {
+                "her": "For Her",
+                "him": "For Him",
+                "anniversary": "Anniversary"
+            }
+        },
+        "banner": {
+            "eyebrow": "Seasonal Drop",
+            "title": "Gold, but with attitude.",
+            "subtitle": "Statement pieces made to catch the light — and keep it.",
+            "cta": "Shop New Arrivals",
+            "secondaryCta": "Our Craft"
+        },
+        "social": {
+            "title": "Follow Our Journey",
+            "handle": "@LuxeJewels_Official"
+        },
+        "customers": {
+            "eyebrow": "Real Stories",
+            "title": "Happy Customers"
+        },
+        "gallery": {
+            "title": "Studio Gallery"
+        }
+    },
+    "about": {
+        "title": "About Luxe Jewels",
+        "tagline": "Where craftsmanship meets timeless design.",
+        "story": {
+            "title": "Our Story",
+            "p1": "Luxe Jewels was founded on the belief that every piece of jewelry should tell a story. We source the finest materials and work with skilled artisans to create pieces that last generations. From classic solitaires to contemporary designs, our collection celebrates both tradition and innovation.",
+            "p2": "We are committed to ethical sourcing and sustainable practices. Every piece is crafted with care and designed to be worn and cherished for a lifetime."
+        },
+        "values": {
+            "title": "What We Stand For",
+            "quality": {
+                "t": "Quality",
+                "d": "Only the finest materials and craftsmanship."
+            },
+            "integrity": {
+                "t": "Integrity",
+                "d": "Transparent sourcing and fair practices."
+            },
+            "beauty": {
+                "t": "Beauty",
+                "d": "Designs that stand the test of time."
+            }
+        }
+    },
+    "contact": {
+        "title": "Contact Us",
+        "tagline": "We’d love to hear from you.",
+        "info": {
+            "title": "Get in touch",
+            "desc": "For inquiries about our collection, custom orders, or partnerships, please reach out. We typically respond within 24 hours.",
+            "email": "Email",
+            "phone": "Phone",
+            "address": "Address"
+        },
+        "form": {
+            "name": "Name",
+            "namePlaceholder": "Your name",
+            "email": "Email",
+            "emailPlaceholder": "your@email.com",
+            "message": "Message",
+            "messagePlaceholder": "Your message",
+            "submit": "Send message"
+        }
+    },
+    "shop": {
+        "title": "Shop Jewelry",
+        "subtitle": "Discover our collection of fine pieces.",
+        "filters": {
+            "categories": "Categories",
+            "all": "All",
+            "price": "Price",
+            "min": "Min",
+            "max": "Max",
+            "title": "Filters"
+        },
+        "toolbar": {
+            "filterBtn": "Filter",
+            "pieces": "pieces"
+        },
+        "sort": {
+            "featured": "Featured",
+            "priceLow": "Price: Low to High",
+            "priceHigh": "Price: High to Low",
+            "rating": "Top Rated"
+        },
+        "noResults": "No pieces match your filters. Try adjusting price or category."
+    },
+    "promises": {
+        "certified": {
+            "title": "Certified Materials",
+            "desc": "Ethical sourcing and verified quality."
+        },
+        "shipping": {
+            "title": "Free Shipping",
+            "desc": "On orders over $250, worldwide."
+        },
+        "returns": {
+            "title": "30‑Day Returns",
+            "desc": "Easy returns. No questions asked."
+        },
+        "secure": {
+            "title": "Secure Checkout",
+            "desc": "Protected payments, every time."
+        }
+    },
+    "testimonials": [
+        {
+            "name": "Aarav",
+            "text": "The finishing is unreal. Feels like a piece of art.",
+            "meta": "Verified buyer"
+        },
+        {
+            "name": "Meera",
+            "text": "Elegant, minimal, and the packaging was premium.",
+            "meta": "Necklace collection"
+        },
+        {
+            "name": "Zoya",
+            "text": "Fast delivery and the shine is beautiful in sunlight.",
+            "meta": "Bracelet set"
+        }
+    ],
+    "product": {
+        "addToCart": "Add to Cart",
+        "reviews": "reviews",
+        "rating": "Rating: {{rating}} out of 5",
+        "materials": "Materials",
+        "notFound": "Product not found.",
+        "backToShop": "Back to Shop",
+        "quantity": "Quantity",
+        "similar": "Similar Pieces",
+        "description": "A beautifully crafted piece from our collection. {{material}} construction ensures lasting elegance. Perfect for everyday wear or special occasions."
+    },
+    "products": {
+        "1": {
+            "name": "Eternal Rose Gold Band",
+            "material": "Rose Gold"
+        },
+        "2": {
+            "name": "Diamond Solitaire Ring",
+            "material": "Platinum & Diamond"
+        },
+        "3": {
+            "name": "Vintage Emerald Ring",
+            "material": "Gold & Emerald"
+        },
+        "4": {
+            "name": "Infinity Twist Ring",
+            "material": "Sterling Silver"
+        },
+        "5": {
+            "name": "Pearl Drop Necklace",
+            "material": "Pearl & Gold"
+        },
+        "6": {
+            "name": "Sapphire Pendant",
+            "material": "Gold & Sapphire"
+        },
+        "7": {
+            "name": "Layered Chain Necklace",
+            "material": "Gold Plated"
+        },
+        "8": {
+            "name": "Ruby Heart Pendant",
+            "material": "Rose Gold & Ruby"
+        },
+        "9": {
+            "name": "Crystal Stud Earrings",
+            "material": "Crystal & Silver"
+        },
+        "10": {
+            "name": "Gold Hoop Earrings",
+            "material": "14K Gold"
+        },
+        "11": {
+            "name": "Pearl Stud Earrings",
+            "material": "Freshwater Pearl"
+        },
+        "12": {
+            "name": "Dangle Emerald Earrings",
+            "material": "Gold & Emerald"
+        },
+        "13": {
+            "name": "Tennis Bracelet",
+            "material": "Diamond & Platinum"
+        },
+        "14": {
+            "name": "Beaded Gem Bracelet",
+            "material": "Semi-precious Stones"
+        },
+        "15": {
+            "name": "Rose Gold Bangle",
+            "material": "Rose Gold"
+        },
+        "16": {
+            "name": "Charm Bracelet",
+            "material": "Sterling Silver"
+        },
+        "17": {
+            "name": "Art Deco Ring",
+            "material": "Gold & Onyx"
+        },
+        "18": {
+            "name": "Moonstone Necklace",
+            "material": "Moonstone & Silver"
+        }
+    },
+    "swipe": {
+        "hint": "← SWIPE TO BROWSE →"
+    }
+}

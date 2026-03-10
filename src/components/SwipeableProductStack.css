@@ -1,0 +1,63 @@
+.swipe-stack-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0 6rem;
+}
+
+.swipe-stack-container {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    height: 520px;
+    perspective: 1200px;
+}
+
+.swipe-card-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: grab;
+    transform-origin: center bottom;
+}
+
+.swipe-card-wrapper:not(.top-card) {
+    pointer-events: none;
+}
+
+.swipe-card-wrapper .product-card {
+    margin-bottom: 0;
+    background: var(--bg-card);
+    border: 1px solid rgba(201, 169, 98, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    padding-bottom: 1.5rem;
+}
+
+.swipe-hint {
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: var(--gold);
+    font-size: 0.9rem;
+    /* Slightly larger */
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    /* Bolder */
+    opacity: 1;
+    /* Full opacity */
+    pointer-events: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    /* Sharper shadow */
+}
+
+@media (max-width: 480px) {
+    .swipe-stack-container {
+        height: 480px;
+        max-width: 310px;
+    }
+}

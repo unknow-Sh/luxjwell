@@ -1,11 +1,13 @@
 import { useSearchParams, Link } from 'react-router-dom';
 import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { categories, products, getProductsByCategory } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import './Shop.css';
 
 export default function Shop() {
+  const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const categorySlug = searchParams.get('category') || '';
   const [sortBy, setSortBy] = useState('featured');
@@ -14,7 +16,7 @@ export default function Shop() {
 
   const FiltersContent = () => (
     <>
-      <h3 className="filter-title">Categories</h3>
+      <h3 className="filter-title">{t('shop.filters.categories')}</h3>
       <ul className="filter-list">
         <li>
           <Link
@@ -22,7 +24,7 @@ export default function Shop() {
             className={!categorySlug ? 'active' : ''}
             onClick={() => setShowMobileFilters(false)}
           >
-            All
+            {t('shop.filters.all')}
           </Link>
         </li>
         {categories.map((cat) => (
@@ -32,15 +34,15 @@ export default function Shop() {
               className={categorySlug === cat.slug ? 'active' : ''}
               onClick={() => setShowMobileFilters(false)}
             >
-              {cat.name}
+              {t(`categories.${cat.id}.name`)}
             </Link>
           </li>
         ))}
       </ul>
-      <h3 className="filter-title">Price</h3>
+      <h3 className="filter-title">{t('shop.filters.price')}</h3>
       <div className="price-filter">
         <label>
-          Min $<input
+          {t('shop.filters.min')} $<input
             type="number"
             value={priceRange[0]}
             onChange={(e) => setPriceRange(([_, max]) => [Number(e.target.value) || 0, max])}
@@ -48,7 +50,7 @@ export default function Shop() {
           />
         </label>
         <label>
-          Max $<input
+          {t('shop.filters.max')} $<input
             type="number"
             value={priceRange[1]}
             onChange={(e) => setPriceRange(([min]) => [min, Number(e.target.value) || 3000])}
@@ -78,8 +80,8 @@ export default function Shop() {
         transition={{ duration: 0.5 }}
       >
         <div className="container">
-          <h1 className="page-title">Shop Jewelry</h1>
-          <p className="page-subtitle">Discover our collection of fine pieces.</p>
+          <h1 className="page-title">{t('shop.title')}</h1>
+          <p className="page-subtitle">{t('shop.subtitle')}</p>
         </div>
       </motion.section>
 
@@ -111,7 +113,7 @@ export default function Shop() {
                 transition={{ type: 'spring', damping: 25, stiffness: 200 }}
               >
                 <div className="drawer-header">
-                  <h3 className="drawer-title">Filters</h3>
+                  <h3 className="drawer-title">{t('shop.filters.title')}</h3>
                   <button
                     className="close-drawer"
                     onClick={() => setShowMobileFilters(false)}
@@ -138,19 +140,19 @@ export default function Shop() {
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M4 6h16M7 12h10M10 18h4" />
                 </svg>
-                Filter
+                {t('shop.toolbar.filterBtn')}
               </button>
-              <span className="results-count">{filtered.length} pieces</span>
+              <span className="results-count">{filtered.length} {t('shop.toolbar.pieces')}</span>
             </div>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
               className="sort-select"
             >
-              <option value="featured">Featured</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="rating">Top Rated</option>
+              <option value="featured">{t('shop.sort.featured')}</option>
+              <option value="price-low">{t('shop.sort.priceLow')}</option>
+              <option value="price-high">{t('shop.sort.priceHigh')}</option>
+              <option value="rating">{t('shop.sort.rating')}</option>
             </select>
           </div>
           <AnimatePresence mode="popLayout">
@@ -171,7 +173,7 @@ export default function Shop() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                No pieces match your filters. Try adjusting price or category.
+                {t('shop.noResults')}
               </motion.p>
             )}
           </AnimatePresence>

@@ -1,16 +1,18 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { getProductById, getSimilarProducts } from '../data/products';
 import { useCart } from '../context/CartContext';
 import ProductCard from '../components/ProductCard';
 import './ProductDetail.css';
 
 function StarRating({ rating, reviews }) {
+  const { t } = useTranslation();
   const full = Math.floor(rating);
   const half = rating % 1 >= 0.5;
   return (
-    <div className="product-rating large" aria-label={`Rating: ${rating} out of 5`}>
+    <div className="product-rating large" aria-label={t('product.rating', { rating })}>
       {[1, 2, 3, 4, 5].map((i) => (
         <span
           key={i}
@@ -19,12 +21,13 @@ function StarRating({ rating, reviews }) {
           ★
         </span>
       ))}
-      <span className="rating-text">{rating} ({reviews} reviews)</span>
+      <span className="rating-text">{rating} ({reviews} {t('product.reviews')})</span>
     </div>
   );
 }
 
 export default function ProductDetail() {
+  const { t } = useTranslation();
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
@@ -33,12 +36,14 @@ export default function ProductDetail() {
   if (!item) {
     return (
       <div className="container page-product">
-        <p>Product not found.</p>
-        <Link to="/shop">Back to Shop</Link>
+        <p>{t('product.notFound')}</p>
+        <Link to="/shop">{t('product.backToShop')}</Link>
       </div>
     );
   }
 
+  const translatedName = t(`products.${item.id}.name`, { defaultValue: item.name });
+  const translatedMaterial = t(`products.${item.id}.material`, { defaultValue: item.material });
   const similar = getSimilarProducts(item.id, item.category);
 
   return (
@@ -54,23 +59,22 @@ export default function ProductDetail() {
             <motion.img
               key={item.image}
               src={item.image}
-              alt={item.name}
+              alt={translatedName}
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4 }}
             />
           </div>
           <div className="product-detail-info">
-            <span className="product-material-tag">{item.material}</span>
-            <h1 className="product-detail-title">{item.name}</h1>
+            <span className="product-material-tag">{translatedMaterial}</span>
+            <h1 className="product-detail-title">{translatedName}</h1>
             <StarRating rating={item.rating} reviews={item.reviews} />
             <p className="product-detail-price">${item.price.toLocaleString()}</p>
             <p className="product-detail-desc">
-              A beautifully crafted piece from our collection. {item.material} construction
-              ensures lasting elegance. Perfect for everyday wear or special occasions.
+              {t('product.description', { material: translatedMaterial })}
             </p>
             <div className="quantity-row">
-              <label>Quantity</label>
+              <label>{t('product.quantity')}</label>
               <div className="quantity-controls">
                 <button
                   type="button"
@@ -96,7 +100,7 @@ export default function ProductDetail() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Add to Cart — ${(item.price * quantity).toLocaleString()}
+              {t('product.addToCart')} — ${(item.price * quantity).toLocaleString()}
             </motion.button>
           </div>
         </motion.div>
@@ -109,7 +113,7 @@ export default function ProductDetail() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              Similar Pieces
+              {t('product.similar')}
             </motion.h2>
             <div className="similar-grid">
               {similar.map((p, i) => (

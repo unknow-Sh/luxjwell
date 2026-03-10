@@ -310,3 +310,40 @@ main {
     height: 1.35rem;
   }
 }
+
+.lang-toggle {
+  background: rgba(201, 169, 98, 0.12);
+  border: 1px solid rgba(201, 169, 98, 0.25);
+  color: var(--gold-light);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 40px;
+  text-align: center;
+}
+
+.lang-toggle:hover {
+  background: rgba(201, 169, 98, 0.2);
+  border-color: var(--gold);
+}
+
+.mobile-lang-btn {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  background: rgba(201, 169, 98, 0.1);
+  border: 1px solid rgba(201, 169, 98, 0.2);
+  border-radius: 12px;
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.mobile-lang-btn:active {
+  background: rgba(201, 169, 98, 0.15);
+}

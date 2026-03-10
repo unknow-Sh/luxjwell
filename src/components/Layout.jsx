@@ -1,12 +1,14 @@
 import { Link, useLocation, Outlet } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useMemo, useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useCart } from '../context/CartContext';
 import './Layout.css';
 
 const Motion = motion;
 
 export default function Layout() {
+  const { t, i18n } = useTranslation();
   const location = useLocation();
   const { cartCount } = useCart();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -22,13 +24,18 @@ export default function Layout() {
 
   const navItems = useMemo(
     () => [
-      { to: '/', label: 'Home', active: location.pathname === '/' },
-      { to: '/shop', label: 'Shop', active: location.pathname.startsWith('/shop') },
-      { to: '/about', label: 'About', active: location.pathname === '/about' },
-      { to: '/contact', label: 'Contact', active: location.pathname === '/contact' },
+      { to: '/', label: t('nav.home'), active: location.pathname === '/' },
+      { to: '/shop', label: t('nav.shop'), active: location.pathname.startsWith('/shop') },
+      { to: '/about', label: t('nav.about'), active: location.pathname === '/about' },
+      { to: '/contact', label: t('nav.contact'), active: location.pathname === '/contact' },
     ],
-    [location.pathname]
+    [location.pathname, t]
   );
+
+  const toggleLanguage = () => {
+    const nextLang = i18n.language === 'en' ? 'hi' : 'en';
+    i18n.changeLanguage(nextLang);
+  };
 
   return (
     <div className="app">
@@ -56,7 +63,15 @@ export default function Layout() {
               ))}
             </nav>
 
-            <Link to="/cart" className="cart-link" aria-label="Cart">
+            <button
+              onClick={toggleLanguage}
+              className="lang-toggle"
+              aria-label="Toggle Language"
+            >
+              {i18n.language === 'en' ? 'हिं' : 'EN'}
+            </button>
+
+            <Link to="/cart" className="cart-link" aria-label={t('nav.cart')}>
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -71,7 +86,7 @@ export default function Layout() {
                 <circle cx="20" cy="21" r="1" />
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
               </svg>
-              <span className="cart-text">Cart</span>
+              <span className="cart-text">{t('nav.cart')}</span>
               {cartCount > 0 && (
                 <motion.span
                   className="cart-badge"
@@ -133,8 +148,11 @@ export default function Layout() {
                   ))}
                   <div className="mobile-divider" />
                   <Link to="/cart" className="mobile-cart" onClick={() => setMobileOpen(false)}>
-                    Cart {cartCount > 0 ? `(${cartCount})` : ''}
+                    {t('nav.cart')} {cartCount > 0 ? `(${cartCount})` : ''}
                   </Link>
+                  <button onClick={toggleLanguage} className="mobile-lang-btn">
+                    {i18n.language === 'en' ? 'Hindi / हिंदी' : 'English / English'}
+                  </button>
                 </div>
               </motion.nav>
             </>
@@ -160,15 +178,15 @@ export default function Layout() {
         <div className="container footer-inner">
           <div className="footer-brand">
             <span className="logo-text">Luxe Jewels</span>
-            <p className="tagline">Crafted for the extraordinary.</p>
+            <p className="tagline">{t('footer.tagline')}</p>
           </div>
           <div className="footer-links">
-            <Link to="/shop">Shop</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
+            <Link to="/shop">{t('nav.shop')}</Link>
+            <Link to="/about">{t('nav.about')}</Link>
+            <Link to="/contact">{t('nav.contact')}</Link>
           </div>
           <p className="footer-copy">
-            © {new Date().getFullYear()} Luxe Jewels. All rights reserved.
+            © {new Date().getFullYear()} Luxe Jewels. {t('footer.rights')}
           </p>
         </div>
       </footer>

@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './Contact.css';
 
 export default function Contact() {
+  const { t } = useTranslation();
   return (
     <div className="page-contact">
       <motion.section
@@ -11,8 +13,8 @@ export default function Contact() {
         transition={{ duration: 0.6 }}
       >
         <div className="container">
-          <h1 className="page-title">Contact Us</h1>
-          <p className="contact-tagline">We’d love to hear from you.</p>
+          <h1 className="page-title">{t('contact.title')}</h1>
+          <p className="contact-tagline">{t('contact.tagline')}</p>
         </div>
       </motion.section>
       <div className="container">
@@ -23,31 +25,30 @@ export default function Contact() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <div className="contact-info">
-            <h3 className="contact-heading">Get in touch</h3>
+            <h3 className="contact-heading">{t('contact.info.title')}</h3>
             <p className="contact-text">
-              For inquiries about our collection, custom orders, or partnerships,
-              please reach out. We typically respond within 24 hours.
+              {t('contact.info.desc')}
             </p>
             <ul className="contact-details">
-              <li><strong>Email</strong> hello@luxejewels.com</li>
-              <li><strong>Phone</strong> +1 (555) 123-4567</li>
-              <li><strong>Address</strong> 123 Jewel Lane, Suite 100</li>
+              <li><strong>{t('contact.info.email')}</strong> hello@luxejewels.com</li>
+              <li><strong>{t('contact.info.phone')}</strong> +1 (555) 123-4567</li>
+              <li><strong>{t('contact.info.address')}</strong> 123 Jewel Lane, Suite 100</li>
             </ul>
           </div>
           <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
             <label>
-              Name
-              <input type="text" placeholder="Your name" />
+              {t('contact.form.name')}
+              <input type="text" placeholder={t('contact.form.namePlaceholder')} />
             </label>
             <label>
-              Email
-              <input type="email" placeholder="your@email.com" />
+              {t('contact.form.email')}
+              <input type="email" placeholder={t('contact.form.emailPlaceholder')} />
             </label>
             <label>
-              Message
-              <textarea rows={5} placeholder="Your message" />
+              {t('contact.form.message')}
+              <textarea rows={5} placeholder={t('contact.form.messagePlaceholder')} />
             </label>
-            <button type="submit" className="btn-submit">Send message</button>
+            <button type="submit" className="btn-submit">{t('contact.form.submit')}</button>
           </form>
         </motion.div>
       </div>
